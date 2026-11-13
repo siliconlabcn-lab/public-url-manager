@@ -3,26 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>公开网址</title>
+  <title>公开网址库</title>
   <style>
     :root { color-scheme: light dark; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-    body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #f6f8fa; color: #1f2328; }
-    main { width: min(680px, calc(100% - 40px)); padding: 48px; box-sizing: border-box; text-align: center; background: white; border: 1px solid #d0d7de; border-radius: 16px; box-shadow: 0 8px 24px rgba(140,149,159,.2); }
-    h1 { margin: 0 0 16px; font-size: clamp(32px, 7vw, 56px); }
-    p { margin: 0; color: #59636e; font-size: 18px; line-height: 1.7; }
-    a { color: #0969da; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; background: #f6f8fa; color: #1f2328; }
+    main { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0; }
+    header { margin-bottom: 32px; }
+    h1 { margin: 0 0 12px; font-size: clamp(34px, 7vw, 58px); letter-spacing: -.04em; }
+    header p { margin: 0; color: #59636e; font-size: 18px; line-height: 1.7; }
+    .card { display: block; padding: 28px; color: inherit; text-decoration: none; background: white; border: 1px solid #d0d7de; border-radius: 18px; box-shadow: 0 8px 24px rgba(140,149,159,.16); transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(140,149,159,.22); }
+    .tag { display: inline-block; padding: 6px 9px; color: #055d45; background: #dafbe1; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    h2 { margin: 18px 0 10px; font-size: 25px; }
+    .card p { margin: 0; color: #59636e; line-height: 1.7; }
+    .url { display: block; margin-top: 20px; color: #0969da; font-size: 14px; overflow-wrap: anywhere; }
     @media (prefers-color-scheme: dark) {
       body { background: #0d1117; color: #f0f6fc; }
-      main { background: #161b22; border-color: #30363d; box-shadow: none; }
-      p { color: #9198a1; }
-      a { color: #4493f8; }
+      header p, .card p { color: #9198a1; }
+      .card { background: #161b22; border-color: #30363d; box-shadow: none; }
+      .url { color: #4493f8; }
     }
   </style>
 </head>
 <body>
   <main>
-    <h1>公开网址已启动</h1>
-    <p>这是由 GitHub Pages 托管的公开页面，任何人都可以通过这个网址访问。</p>
+    <header>
+      <h1>公开网址库</h1>
+      <p>学习网站与公开工具的统一入口。</p>
+    </header>
+    <a class="card" href="https://esther-english.keenhutch.chatgpt.site/" target="_blank" rel="noopener">
+      <span class="tag">英语学习</span>
+      <h2>佳音七上英语冒险岛</h2>
+      <p>30 分钟智慧训练、弱点优先复习、空中杂志阅读、九类题型与对应英文视频。</p>
+      <span class="url">esther-english.keenhutch.chatgpt.site →</span>
+    </a>
   </main>
 </body>
 </html>
