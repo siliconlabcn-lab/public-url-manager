@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183153">
+  <meta name="description" content="翰林佳音七年級上冊英語複習闖關網站：30 分鐘一輪、弱點優先、進度保存與英文影片延伸。">
+  <title>佳音七上英語冒險島</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="回到首頁">
+      <span class="brand-mark">J!</span>
+      <span><b>佳音七上</b><small>ENGLISH QUEST</small></span>
+    </a>
+    <div class="session-pill" id="sessionPill" hidden>
+      <span class="pulse"></span><b id="timerText">30:00</b><span>本次訓練</span>
+    </div>
+    <nav class="top-actions" aria-label="個人學習資料">
+      <button class="icon-btn" id="soundBtn" aria-label="切換音效" title="音效">♪</button>
+      <div class="stat"><span>🔥</span><b id="streakTop">0</b><small>連勝</small></div>
+      <div class="stat"><span>⚡</span><b id="xpTop">0</b><small>XP</small></div>
+      <button class="avatar" id="profileBtn" aria-label="開啟學習報告">E7</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="homeView" class="view active">
+      <div class="hero shell">
+        <div class="hero-copy">
+          <span class="eyebrow"><i></i> 七年級上冊・學期總複習</span>
+          <h1>今天，再征服一座<br><em>英語冒險島。</em></h1>
+          <p>每次 30 分鐘，先複習上次不熟的知識點，再挑戰新題。答錯不是扣分，是下一次變強的線索。</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="startSessionBtn"><span>開始 30 分鐘訓練</span><b>→</b></button>
+            <button class="ghost-btn" id="quickPracticeBtn">自由選島練習</button>
+          </div>
+          <div class="save-note"><span>✓</span> 進度會自動保存在這台裝置</div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="planet">
+            <div class="planet-ring"></div><div class="planet-land land-a"></div><div class="planet-land land-b"></div>
+            <span class="flag">GO!</span>
+          </div>
+          <div class="float-card fc-one"><span>ABC</span><b>WORD</b></div>
+          <div class="float-card fc-two"><span>/ʃ/</span><b>SOUND</b></div>
+          <div class="float-card fc-three"><span>✦</span><b>+10 XP</b></div>
+        </div>
+      </div>
+
+      <section class="shell today-panel">
+        <div class="panel-heading">
+          <div><span class="kicker">TODAY'S ROUTE</span><h2>你的 30 分鐘任務</h2></div>
+          <div class="route-total"><b>30</b><span>MIN</span></div>
+        </div>
+        <div class="route-grid">
+          <article class="route-card review"><div class="route-icon">↺</div><div><small>0–5 MIN</small><h3>弱點暖身</h3><p id="weakSummary">第一次來，先做快速程度探索</p></div><b class="route-min">5′</b></article>
+          <article class="route-card quest"><div class="route-icon">⚑</div><div><small>5–25 MIN</small><h3>主線闖關</h3><p>依熟練度混合出題，答對累積連擊</p></div><b class="route-min">20′</b></article>
+          <article class="route-card video"><div class="route-icon">▶</div><div><small>25–30 MIN</small><h3>影片加強</h3><p>按本次薄弱點推薦英文內容</p></div><b class="route-min">5′</b></article>
+        </div>
+      </section>
+
+      <section class="shell islands-section" id="islandsSection">
+        <div class="section-heading"><div><span class="kicker">9 QUEST ISLANDS</span><h2>九大複習島</h2></div><p>點一座島自由練習，或開始 30 分鐘智慧訓練。</p></div>
+        <div class="island-grid" id="islandGrid"></div>
+      </section>
+
+      <section class="shell magazine-banner">
+        <div class="mag-label">SKY<br>MAG</div>
+        <div><span class="kicker light">空中雜誌專練</span><h2>把文章讀懂，也把世界讀近。</h2><p>生活、校園與科普短文，結合 2000 字彙、文意推論與題組閱讀。</p></div>
+        <button id="magazineBtn">進入本期專練 <span>↗</span></button>
+      </section>
+    </section>
+
+    <section id="quizView" class="view quiz-view">
+      <div class="quiz-shell">
+        <div class="quiz-head">
+          <button class="back-btn" id="exitQuizBtn">← <span>離開</span></button>
+          <div class="progress-wrap"><div class="progress-meta"><span id="quizModeLabel">30 分鐘訓練</span><b id="questionCount">1 / 20</b></div><div class="progress-track"><i id="progressBar"></i></div></div>
+          <div class="hearts" id="hearts" aria-label="生命值">♥ ♥ ♥</div>
+        </div>
+
+        <div class="quiz-stage">
+          <div class="question-meta"><span class="category-tag" id="categoryTag">音標島</span><span class="difficulty" id="difficulty">● 基礎</span></div>
+          <div class="combo" id="comboBadge" hidden>🔥 <b>3</b> 連擊</div>
+          <article class="question-card">
+            <div id="passageBox" class="passage-box" hidden></div>
+            <h2 id="questionPrompt">準備好了嗎？</h2>
+            <p class="question-hint" id="questionHint"></p>
+            <div id="answerArea" class="answer-area"></div>
+            <div id="feedback" class="feedback" hidden></div>
+          </article>
+          <div class="quiz-actions">
+            <button class="hint-btn" id="hintBtn">💡 提示</button>
+            <button class="check-btn" id="checkBtn" disabled>確認答案</button>
+            <button class="next-btn" id="nextBtn" hidden>下一題 →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultView" class="view result-view">
+      <div class="result-shell">
+        <div class="result-burst"><span>★</span></div>
+        <span class="eyebrow center"><i></i> QUEST COMPLETE</span>
+        <h1 id="resultTitle">完成今日任務！</h1>
+        <p id="resultSubtitle">你又比昨天更強一點。</p>
+        <div class="result-score"><b id="resultScore">80</b><span>分</span></div>
+        <div class="result-stats">
+          <div><span>答對</span><b id="correctStat">8 / 10</b></div><div><span>獲得</span><b id="xpStat">+80 XP</b></div><div><span>最佳連擊</span><b id="comboStat">5</b></div>
+        </div>
+        <div class="weak-report"><div><span class="kicker">NEXT UP</span><h2>下次先複習這些</h2></div><div id="weakChips" class="weak-chips"></div></div>
+        <div class="video-section">
+          <div class="section-heading compact"><div><span class="kicker">5-MIN VIDEO BOOST</span><h2>看一小段，把英文讀得更懂</h2></div><p>依你這次的答題狀況推薦</p></div>
+          <div class="video-grid" id="videoGrid"></div>
+        </div>
+        <div class="result-actions"><button class="ghost-btn" id="homeBtn">回到冒險地圖</button><button class="primary-btn" id="againBtn"><span>再練一輪</span><b>→</b></button></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="profileDialog" class="profile-dialog">
+    <button class="dialog-close" id="closeProfileBtn">×</button>
+    <span class="kicker">LEARNING REPORT</span><h2>我的學習報告</h2>
+    <div class="report-hero"><div><span>總經驗值</span><b id="reportXp">0 XP</b></div><div><span>完成訓練</span><b id="reportSessions">0 次</b></div></div>
+    <div id="masteryList" class="mastery-list"></div>
+    <button class="reset-btn" id="resetBtn">清除這台裝置的學習紀錄</button>
+  </dialog>
+
+  <dialog id="exitDialog" class="confirm-dialog">
+    <h2>要先休息一下嗎？</h2><p>本次答題進度已保存。下次開始時，會先複習還不熟的內容。</p>
+    <div><button class="ghost-btn" id="keepGoingBtn">繼續練習</button><button class="danger-btn" id="confirmExitBtn">儲存並離開</button></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
