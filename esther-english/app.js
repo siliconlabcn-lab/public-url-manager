@@ -1,7 +1,7 @@
 const CATEGORIES = [
   {id:"phonics",name:"音標島",icon:"/æ/",desc:"30 分鐘 KK 音標：學、聽、玩、測",color:"#71c8ec"},
   {id:"grammar",name:"語法研究所",icon:"⌘",desc:"be 動詞、時態與句型整合",color:"#ffd84d"},
-  {id:"magazine",name:"空中雜誌 × 2000字",icon:"SKY",desc:"短篇文章、核心字彙與推論",color:"#8976e8"},
+  {id:"magazine",name:"空中雜誌 × 2000字",icon:"SKY",desc:"短篇閱讀＋Super 2000 字彙",color:"#8976e8"},
   {id:"cloze",name:"克漏字森林",icon:"…",desc:"用上下文找出最佳答案",color:"#62d6b5"},
   {id:"reading",name:"題組探險隊",icon:"▤",desc:"生活短文、圖表與閱讀理解",color:"#ff9a5c"},
   {id:"context",name:"文意字彙站",icon:"Aa",desc:"從語境判斷正確單字",color:"#ed799f"},
