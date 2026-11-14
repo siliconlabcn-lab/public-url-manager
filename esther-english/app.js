@@ -1,5 +1,5 @@
 const CATEGORIES = [
-  {id:"phonics",name:"音標島",icon:"/æ/",desc:"母音、子音與重音辨識",color:"#71c8ec"},
+  {id:"phonics",name:"音標島",icon:"/æ/",desc:"30 分鐘 KK 音標：學、聽、玩、測",color:"#71c8ec"},
   {id:"grammar",name:"語法研究所",icon:"⌘",desc:"be 動詞、時態與句型整合",color:"#ffd84d"},
   {id:"magazine",name:"空中雜誌 × 2000字",icon:"SKY",desc:"短篇文章、核心字彙與推論",color:"#8976e8"},
   {id:"cloze",name:"克漏字森林",icon:"…",desc:"用上下文找出最佳答案",color:"#62d6b5"},
@@ -117,7 +117,7 @@ function renderHome(){
     const m=Math.round(state.mastery[c.id]||0);
     return `<button class="island-card" data-cat="${c.id}"><span class="island-num">ISLAND 0${i+1}</span><h3>${c.name}</h3><p>${c.desc}</p><span class="mastery-label">熟練度 ${m}%</span><span class="mastery"><i style="width:${m}%"></i></span><span class="island-icon" style="background:${c.color}">${c.icon}</span></button>`
   }).join("");
-  document.querySelectorAll(".island-card").forEach(btn=>btn.onclick=()=>startCategory(btn.dataset.cat));
+  document.querySelectorAll(".island-card").forEach(btn=>btn.onclick=()=>btn.dataset.cat==="phonics"?location.href="phonics.html":startCategory(btn.dataset.cat));
 }
 
 function weakCategories(){
